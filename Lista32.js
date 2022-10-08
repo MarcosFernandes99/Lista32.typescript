@@ -15,17 +15,29 @@
 //     return maiorPalavra  
 // }
 // EXERCICIO 2
-var nome = "Marcos_2022";
-console.log(ValidarNome(nome));
-function ValidarNome(nome) {
-    var primeiroCaractere = /^[a-z]/i;
-    var caracateresValidos = /\W/;
-    var ultimoCaractere = /[^_]/;
-    var teste1 = primeiroCaractere.test(nome);
-    var teste2 = caracateresValidos.test(nome);
-    var teste3 = ultimoCaractere.test(nome);
-    if (nome.length >= 4 && nome.length <= 25 && teste1 && !teste2 && teste3) {
-        return true;
-    }
-    return false;
+// let nome : string = "Marcos_2022"
+// console.log(ValidarNome(nome))
+// function ValidarNome(nome : string) : boolean{
+//     let primeiroCaractere : RegExp = /^[a-z]/i
+//     let caracateresValidos : RegExp = /\W/
+//     let ultimoCaractere : RegExp = /[^_]/
+//     let teste1: boolean = primeiroCaractere.test(nome)
+//     let teste2: boolean = caracateresValidos.test(nome) 
+//     let teste3: boolean = ultimoCaractere.test(nome)
+//     if(nome.length >= 4 && nome.length <= 25 && teste1 && !teste2 && teste3){
+//         return true
+//     }
+//     return false
+// }
+// EXERCICIO 3
+var array = ["2,4,5,8,14", "2,3,5,8,14,16"];
+console.log(ElementosEmComum(array));
+function ElementosEmComum(array) {
+    var elementosEmComum = [];
+    array[0].split(",").forEach(function (x) {
+        if (array[1].split(",").includes(x)) {
+            elementosEmComum.push(x);
+        }
+    });
+    return elementosEmComum.toString();
 }
