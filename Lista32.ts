@@ -1,44 +1,21 @@
-let nome : string
-nome = "1Marcos123 Fernandes Junior"
-
-ValidarNomeDeUsuario(nome)
-
-function ValidarNomeDeUsuario(nomeParametro : string){    
-    let validacao : boolean = false
-    console.log("Quantidade de caracteres: " + nomeParametro.length)
-    if(nomeParametro.length > 4 && nomeParametro. length < 25){
-        validacao = true
-    }
-    else if(validacao){
-        let letra : string = ""
-        if(letra = nomeParametro.charAt[0]){
-
-        }
-    }
-}
-
 // EXERCICIO 1
 
-// let frase : string
-// frase = "Eu estudo na Dodev"
-// let fraseQuebrada : string[]
+let frase : string = "Eu&&$ est%$udo n$a Dod$%ev"
 
-// console.log(PalavraMaisLonga(frase))
-// console.log("A maior palavra e | " + VerificarMaiorPalavra(PalavraMaisLonga(frase)))
+console.log("A maior palavra e | " + VerificarMaiorPalavra(frase))
 
 
-// function PalavraMaisLonga(frase : string) : string[]{    
-//     fraseQuebrada = frase.split(" ")    
-//     return fraseQuebrada
-// }
+function VerificarMaiorPalavra(fraseParametro : string): string{
+    let palavras : string[] = fraseParametro.split(" ")
+    palavras.forEach((x, index) => {
+        palavras[index] = x.replace(/\W/g, "")})
+        console.log(palavras)
 
-// function VerificarMaiorPalavra(resParametro : string[]): string{
-//     let maiorPalavra : string
-//     maiorPalavra = ""   
-//     resParametro.forEach(x => {
-//         if(x.length > maiorPalavra.length){
-//             maiorPalavra = x
-//         }
-//     })
-//     return maiorPalavra  
-// }
+    let maiorPalavra : string = ""    
+    palavras.forEach(x => {
+        if(x.length > maiorPalavra.length){
+            maiorPalavra = x
+        }
+    })
+    return maiorPalavra  
+}
